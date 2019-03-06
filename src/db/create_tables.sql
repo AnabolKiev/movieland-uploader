@@ -1,6 +1,14 @@
 DROP SCHEMA IF EXISTS movieland;
 CREATE SCHEMA movieland;
 
+select * from genre;
+select * from user;
+
+SET NAMES 'utf8';
+SELECT default_character_set_name FROM information_schema.SCHEMATA S
+WHERE schema_name = "sql7281012";
+ALTER DATABASE sql7281012 CHARACTER SET utf8 COLLATE utf8_bin;
+
 DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS movieGenre;
 DROP TABLE IF EXISTS movieCountry;

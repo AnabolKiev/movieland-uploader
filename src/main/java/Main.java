@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,9 +7,9 @@ import java.util.List;
 import static java.sql.DriverManager.getConnection;
 
 public class Main {
-    private static final String URL_DB = "jdbc:mysql://localhost:3306/movieland";
-    private static final String USERNAME_DB = "root";
-    private static final String PASSWORD_DB = "root";
+    private static final String URL_DB = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7281012?useUnicode=yes&characterEncoding=UTF-8";
+    private static final String USERNAME_DB = "sql7281012";
+    private static final String PASSWORD_DB = "VrWWk6FjKA";
     private static Connection connection;
     private static Statement statement;
     private static PreparedStatement preparedStatement;
@@ -37,7 +35,7 @@ public class Main {
     }
 
     private static List<String> readFromFile(String path) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8" ));
         ArrayList<String> lines = new ArrayList<>();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
